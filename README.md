@@ -14,7 +14,7 @@ Camagru is a web application that allows users to take or upload photos, apply f
 ## Tech Stack
 
 - **Frontend**: HTML, CSS, JavaScript
-- **Backend**: Node.js (Express)
+- **Backend**: Node.js
 - **Database**: PostgreSQL
 - **Web Server**: Nginx
 - **Containerization**: Docker + Docker Compose
