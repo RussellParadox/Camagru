@@ -1,0 +1,24 @@
+services:
+  nginx:
+    image: nginx
+    container_name: Nginx
+    ports:
+      - "80:80"
+      - "443:443"
+    networks:
+      - camagru_network
+    volumes:
+      - ./sources/requirements/nginx/templates:/etc/nginx/templates
+      - ./sources/requirements/nginx/tls:/etc/nginx/tls
+      - ./sources/mapped_volumes/frontend:/app/frontend
+    environment:
+      - DOMAIN_NAME=${DOMAIN_NAME}
+  # nodejs:
+  # postgresql:
+
+volumes:
+  database:
+
+networks:
+  camagru_network:
+    driver: bridge
