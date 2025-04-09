@@ -8,9 +8,9 @@ services:
     networks:
       - camagru_network
     volumes:
-      - ./sources/requirements/nginx/templates:/etc/nginx/templates
-      - ./sources/requirements/nginx/tls:/etc/nginx/tls
-      - ./sources/mapped_volumes/frontend:/app/frontend
+      - ./sources/requirements/nginx/templates:/etc/nginx/templates:ro
+      - ./sources/requirements/nginx/tls:/etc/nginx/tls:ro
+      - ./sources/mapped_volumes/frontend:/app/frontend:ro
     environment:
       - DOMAIN_NAME=${DOMAIN_NAME}
   # nodejs:
