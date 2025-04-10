@@ -13,7 +13,16 @@ services:
       - ./sources/mapped_volumes/frontend:/app/frontend
     environment:
       - DOMAIN_NAME=${DOMAIN_NAME}
-  # nodejs:
+  nodejs:
+    image: node
+    container_name: Node.js
+    expose:
+      - 3000
+    networks:
+      - camagru_network
+    volumes:
+      - ./sources/mapped_volumes/backend:/app/backend
+    entrypoint: ["node", "/app/backend/server.js"]
   # postgresql:
 
 volumes:
