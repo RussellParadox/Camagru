@@ -1,0 +1,86 @@
+/* Fonts */
+@font-face {
+    font-family: "Inter";
+    src: url(fonts/Inter_18pt-Black.ttf);
+}
+
+/* Animations */
+@keyframes rotation {
+    from {transform: rotate(0deg);}
+    to {transform: rotate(360deg);}
+}
+
+@keyframes rainbow{
+		100%,0%{
+			color: rgb(255,0,0);
+		}
+		8%{
+			color: rgb(255,127,0);
+		}
+		16%{
+			color: rgb(255,255,0);
+		}
+		25%{
+			color: rgb(127,255,0);
+		}
+		33%{
+			color: rgb(0,255,0);
+		}
+		41%{
+			color: rgb(0,255,127);
+		}
+		50%{
+			color: rgb(0,255,255);
+		}
+		58%{
+			color: rgb(0,127,255);
+		}
+		66%{
+			color: rgb(0,0,255);
+		}
+		75%{
+			color: rgb(127,0,255);
+		}
+		83%{
+			color: rgb(255,0,255);
+		}
+		91%{
+			color: rgb(255,0,127);
+		}
+}
+
+@keyframes bling {
+    0% {transform: translate(10vw, 10vh) rotate(0deg);}
+    25% {transform: translate(90vw, 90vh) rotate(360deg);}
+    50% {transform: translate(90vw, 10vh) rotate(0deg);}
+    75% {transform: translate(10vw, 90vh) rotate(360deg);}
+    100% {transform: translate(10vw, 10vh) rotate(0deg);}
+}
+
+* {
+    font-family: "Inter";
+}
+
+#title {
+    color: white;
+    display: inline-block;
+    transform-origin: center center;
+    /* animation: rainbow 1s linear infinite, bling 15s ease infinite; */
+}
+
+body {
+    background-color: white;
+    margin: 0%;
+}
+
+header {
+    background-color: black;
+    padding-left: 1vw;
+}
+
+main {
+    text-align: center;
+}
+
+footer {
+}
