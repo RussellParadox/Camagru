@@ -9,17 +9,18 @@
 <body>
     <header>
         <nav id="navbar">
-            <div id="navbar-brand"><a href="">Camagru</a></div>
+            <div id="navbar-brand"><a href="/" data-link>Camagru</a></div>
             <div id="navbar-settings"><img src="./images/settings-logo.png" alt="settings wheel"></div>
             <div class="dropdown-menu" id="settings-dropdown">
-                <a href="" id="dropdown-profile">Profile</a>
-                <a href="" id="dropdown-account">Account</a>
-                <a href="" id="dropdown-disconnect">Disconnect</a>
+                <a href="/profile" data-link id="dropdown-profile">Profile</a>
+                <a href="/account" data-link id="dropdown-account">Account</a>
+                <a href="/" data-link id="dropdown-disconnect">Disconnect</a>
             </div>
         </nav>
     </header>
     <main>
-        <h1>Welcome to Camagru</h1>
+        <div id="app">
+        </div>
     </main>
     <footer>
         <h1>Contacts:</h1>
@@ -29,5 +30,6 @@
         </ul>
     </footer>
     <script src="scripts/dropdown.js"></script>
+    <script type="module" src="scripts/app.js"></script>
 </body>
 </html>
