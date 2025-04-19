@@ -45,6 +45,8 @@
 .post-caption {
     display: flex;
     flex-direction: column;
+    width: 80%;
+    padding-top: 1%;
 }
 
 .post-caption-text {
