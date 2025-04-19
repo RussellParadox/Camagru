@@ -1,6 +1,6 @@
 #navbar {
     display: flex;
-    justify-content: space-between;
+    /* justify-content: space-between; */
     background-color: white;
     position: relative;
     color: black;
@@ -20,6 +20,10 @@
 }
 
 #navbar-settings {
+    position: absolute;
+    height: 100%;
+    top: 0vh;
+    right: 1vh;
     transition: transform 0.8s ease;
 }
 

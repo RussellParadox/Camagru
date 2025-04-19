@@ -10,9 +10,17 @@
                     <p class="post-caption-date">Posted: <time datetime=""></time></p>
                 </div>
                 <div class="post-engagement">
-                    <div class="post-like"><p></p><input class="heart-button" type="image" src="./images/heart_empty.png" onclick="handleHeartButton(this, event)"></div>
-                    <div class="post-comment"><p></p><input class="comment-button" type="image" src="./images/comment_empty.png" onclick="handleCommentButton(this, event)"></div>
+                    <div class="post-like-zone"><p></p><input class="heart-button" type="image" src="./images/heart_empty.png" onclick="handleHeartButton(this, event)"></div>
+                    <div class="post-comment-zone"><p></p><input class="comment-button" type="image" src="./images/comment_empty.png" onclick="handleCommentButton(this, event)"></div>
                 </div>
             </div>
+            <div class="post-comments">
+            </div>
+    </div>
+</template>
+
+<template id="post-comment-template">
+    <div class="post-comment">
+        <p></p><p></p>
     </div>
 </template>

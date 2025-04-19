@@ -1,3 +1,3 @@
 export function renderer(template) {
-    return template;
+    return template.innerHTML;
 }
