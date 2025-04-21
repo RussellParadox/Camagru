@@ -40,7 +40,7 @@ async function handleCommentButton(event) {
             b.src = "./images/comment_empty.png";
         });
         await post_comment_zone.animate(extend_comment_zone, {
-            duration: 600,
+            duration: 1000,
             fill: 'forwards',
             direction: 'reverse',
         }).finished;
@@ -59,7 +59,7 @@ async function handleCommentButton(event) {
             direction: 'reverse',
         }).finished;
         await post_comment_zone.animate(extend_comment_zone, {
-            duration: 600,
+            duration: 1000,
             fill: 'forwards',
         }).finished;
     }
