@@ -6,9 +6,9 @@ const example_data = [
         "comment_quantity": 45,
         "creation_date": '21/02/2023',
         "comments": [
-            {"user": "Someone", "comment": "Hey what's up man ? Nice picture."},
-            {"user": "Angry_man", "comment": "You stole my picture, I'll find you and I'll kill you."},
-            {"user": "Someone_else", "comment": "Can you answer one day ?"},
+            {"user": "Someone", "content": "Hey what's up man ? Nice picture. 'word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word'"},
+            {"user": "Angry_man", "content": "You stole my picture, I'll find you and I'll kill you."},
+            {"user": "Someone_else", "content": "Can you answer one day ?"},
         ],
     },
     {
@@ -18,7 +18,7 @@ const example_data = [
         "comment_quantity": 5000000000,
         "creation_date": '01/02/2025',
         "comments": [
-            {"user": "Angry_man", "comment": "litteraly the best buddy ever"},
+            {"user": "Angry_man", "content": "litteraly the best buddy ever"},
         ],
     },
     {
@@ -49,6 +49,7 @@ function truncate_number(number) {
 export function renderer(template) {
     let home_gallery = template.getElementById("home-gallery");
     let gallery_post_template = template.getElementById("gallery-post-template");
+    let post_comment_template = template.getElementById("post-comment-template");
 
     example_data.forEach(function (item) {
         let gallery_post = template.importNode(gallery_post_template.content, true);
@@ -58,6 +59,20 @@ export function renderer(template) {
         gallery_post.querySelector('.post-caption').querySelector('time').textContent = item.creation_date;
 
         let post_engagement_quantitys = gallery_post.querySelector('.post-engagement').querySelectorAll('p');
+        post_engagement_quantitys[0].textContent = truncate_number(item.like_quantity);
+        post_engagement_quantitys[1].textContent = truncate_number(item.comment_quantity);
+
+        let post_comments = gallery_post.querySelector('.post-comments');
+        item['comments'].forEach((comment) => {
+            let post_comment = template.importNode(post_comment_template.content, true);
+
+            let comment_data = post_comment.querySelector('p');
+            comment_data.innerHTML = "<span class='comment-username'>" + comment.user + "</span>" + ': ' + comment.content;
+
+            post_comments.appendChild(post_comment);
+        });
+
+        post_engagement_quantitys = gallery_post.querySelector('.post-comment-details').querySelector('.post-engagement').querySelectorAll('p');
         post_engagement_quantitys[0].textContent = truncate_number(item.like_quantity);
         post_engagement_quantitys[1].textContent = truncate_number(item.comment_quantity);
 
